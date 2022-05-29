@@ -1,0 +1,7 @@
+.card__panel {
+  background-color: white;
+  padding: 22px 20px 22px 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

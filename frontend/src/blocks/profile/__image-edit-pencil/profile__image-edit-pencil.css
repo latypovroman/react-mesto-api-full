@@ -1,0 +1,12 @@
+.profile__image-edit-pencil {
+  width: 120px;
+  height: 120px;
+  background-image: url(../../../images/avatar-edit-btn.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all ease-in-out 0.3s;
+}
+
+.profile__image-edit-pencil:hover  {
+  transform: scale(1.05);
+}

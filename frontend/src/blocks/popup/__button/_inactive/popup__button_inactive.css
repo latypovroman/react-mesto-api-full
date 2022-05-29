@@ -1,0 +1,5 @@
+.popup__button_inactive {
+  opacity: 0.2;
+  color: #000000;
+  background-color: #e5e5e5;
+}

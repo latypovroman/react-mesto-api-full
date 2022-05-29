@@ -3,7 +3,7 @@ const { celebrate, Joi } = require('celebrate');
 const {
   getCards, deleteCard, createCard, putLike, deleteLike,
 } = require('../controllers/cards');
-const { urlValidate } = require('../utils/urlValidate');
+const { validation } = require('../utils/urlValidate');
 
 cardRoutes.get('/', getCards);
 
@@ -16,7 +16,7 @@ cardRoutes.delete('/:cardId', celebrate({
 cardRoutes.post('/', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30).required(),
-    link: Joi.string().min(2).required().custom(urlValidate),
+    link: Joi.string().min(2).required().custom(validation),
   }),
 }), createCard);
 

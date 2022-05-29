@@ -8,7 +8,7 @@ const userRoutes = require('./routes/userRoutes');
 const cardRoutes = require('./routes/cardRoutes');
 const { login, createUser } = require('./controllers/users');
 const { createError } = require('./errors/createError');
-const { urlValidate } = require('./utils/urlValidate');
+const { validation } = require('./utils/urlValidate');
 const BadRequestError = require('./errors/BadRequestError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
@@ -23,7 +23,7 @@ app.post('/signup', celebrate({
     password: Joi.string().required(),
     name: Joi.string().min(2).max(30),
     about: Joi.string().min(2).max(30),
-    avatar: Joi.string().min(2).custom(urlValidate),
+    avatar: Joi.string().min(2).custom(validation),
   }),
 }), createUser);
 

@@ -1,0 +1,11 @@
+.header__signout {
+  background-color: transparent;
+  color: #A9A9A9;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  border: none;
+  cursor: pointer;
+  margin-left: 24px;
+  padding: 0;
+}

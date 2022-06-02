@@ -1,0 +1,11 @@
+.sign__redirect-link {
+  margin-left: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease-in;
+}
+
+.sign__redirect-link:hover {
+  opacity: 0.6;
+}

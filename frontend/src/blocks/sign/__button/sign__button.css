@@ -1,0 +1,12 @@
+.sign__button {
+  background-color: white;
+  border: none;
+  padding: 14px 84px;
+  margin-top: 186px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.sign__button:hover {
+  opacity: 0.85;
+}

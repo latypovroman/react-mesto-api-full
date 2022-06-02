@@ -1,0 +1,12 @@
+.header__route {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  transition: all 0.3s ease-in;
+}
+
+.header__route:hover {
+  opacity: 0.6;
+}

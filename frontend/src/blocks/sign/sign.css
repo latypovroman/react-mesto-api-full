@@ -1,0 +1,7 @@
+.sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 60px 0px 80px;
+}

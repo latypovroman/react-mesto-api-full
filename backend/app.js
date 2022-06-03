@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { celebrate, Joi, errors } = require('celebrate');
+const cors = require('cors');
 
 const { PORT = 3000 } = process.env;
 const auth = require('./middlewares/auth');
@@ -16,6 +17,10 @@ const app = express();
 
 app.use(requestLogger);
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost: 3001',
+  credentials: true,
+}));
 
 app.post('/signup', celebrate({
   body: Joi.object().keys({

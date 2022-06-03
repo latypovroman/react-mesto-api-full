@@ -39,6 +39,7 @@ function App() {
   function fetchInitialCards() {
             api.getInitialCards()
            .then((data) => {
+             console.log(data);
              setCards(data);
            })
            .catch((data) =>{

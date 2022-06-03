@@ -64,18 +64,16 @@ function App() {
         .then((data) => {
           setAuthData({
             ...authData,
-            email: data.data.email,
+            email: data.email,
           });
           setLoggedIn(true);
-          console.log(loggedIn)
           history.push( "/" );
         })
         .catch(res => console.log(res))
     }
   }
 
-  React.useEffect(() => {
-    console.log(loggedIn)
+  useEffect(() => {
     if (loggedIn) {
 
       fetchInitialCards();
@@ -164,7 +162,6 @@ function App() {
           email: data.email,
         });
         setLoggedIn(true);
-        console.log(loggedIn)
         history.replace({ pathname: "/" });
       })
       .catch(res => {

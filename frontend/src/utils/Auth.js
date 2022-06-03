@@ -1,4 +1,4 @@
-export const url = 'https://auth.nomoreparties.co/';
+export const url = 'http://localhost:3001/';
 
 export const isResOk = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
@@ -28,7 +28,6 @@ export const authorize = (email, password) => {
     body: JSON.stringify({email, password})
   })
     .then(isResOk)
-
 }
 
 export const getContent = (token) => {

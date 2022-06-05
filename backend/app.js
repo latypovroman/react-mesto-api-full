@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { celebrate, Joi, errors } = require('celebrate');
 const cors = require('cors');
 
-const { PORT = 3001 } = process.env;
+const { PORT = 3000 } = process.env;
 const auth = require('./middlewares/auth');
 const userRoutes = require('./routes/userRoutes');
 const cardRoutes = require('./routes/cardRoutes');
@@ -18,7 +18,7 @@ const app = express();
 app.use(requestLogger);
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://mesto.app.nomoredomains.sbs',
   credentials: true,
 }));
 
@@ -55,7 +55,7 @@ async function main() {
     useNewUrlParser: true,
     useUnifiedTopology: false,
   });
-  app.listen(PORT, () => {});
+  app.listen(PORT);
 }
 
 main();

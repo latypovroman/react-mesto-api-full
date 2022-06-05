@@ -1,4 +1,4 @@
-export const url = 'https://api.mesto.app.nomoredomains.xyz';
+export const url = 'https://api.mesto.app.nomoredomains.xyz/';
 
 export const isResOk = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);

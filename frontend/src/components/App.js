@@ -39,7 +39,6 @@ function App() {
   function fetchInitialCards() {
             api.getInitialCards()
            .then((data) => {
-             console.log(data);
              setCards(data);
            })
            .catch((data) =>{
@@ -210,7 +209,6 @@ function App() {
   }
 
   const handleCardDelete = (card) => {
-    console.log(card);
     api.deleteCard(card)
     .then(() => {
       setCards((state) => state.filter((stateCard) => stateCard._id !== card._id))

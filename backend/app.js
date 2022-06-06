@@ -17,6 +17,7 @@ const app = express();
 
 app.use(requestLogger);
 app.use(express.json());
+app.options('/', cors());
 app.use(cors({
   origin: 'https://mesto.app.nomoredomains.sbs',
   credentials: true,

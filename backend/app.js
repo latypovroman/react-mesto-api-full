@@ -18,7 +18,6 @@ const app = express();
 
 app.use(requestLogger);
 app.use(express.json());
-app.options('*', cors());
 app.use(cors({
   origin: ['http://localhost:3000/', 'https://mesto.app.nomoredomains.sbs'],
   credentials: true,
@@ -30,7 +29,7 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.post('/signup', cors(), celebrate({
+app.post('/signup', celebrate({
   body: Joi.object().keys({
     email: Joi.string().email().required(),
     password: Joi.string().required(),
@@ -40,15 +39,15 @@ app.post('/signup', cors(), celebrate({
   }),
 }), createUser);
 
-app.post('/signin', cors(), celebrate({
+app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().email().required(),
     password: Joi.string().required(),
   }),
 }), login);
 
-app.use('/users', cors(), auth, userRoutes);
-app.use('/cards', cors(), auth, cardRoutes);
+app.use('/users', auth, userRoutes);
+app.use('/cards', auth, cardRoutes);
 
 app.use(auth, cors(), () => {
   throw new NotFoundError('Неверный адрес');

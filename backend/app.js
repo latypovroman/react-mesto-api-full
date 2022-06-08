@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const { celebrate, Joi, errors } = require('celebrate');
 const cors = require('cors');
 
-const { PORT = 3001 } = process.env;
+const { PORT = 3000 } = process.env;
 const auth = require('./middlewares/auth');
 const userRoutes = require('./routes/userRoutes');
 const cardRoutes = require('./routes/cardRoutes');

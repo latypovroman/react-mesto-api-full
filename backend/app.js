@@ -20,7 +20,7 @@ app.use(requestLogger);
 app.use(express.json());
 app.use(cors({
   origin: ['http://localhost:3000/', 'https://mesto.app.nomoredomains.sbs'],
-  credentials: true,
+  // credentials: true,
 }));
 
 app.get('/crash-test', () => {

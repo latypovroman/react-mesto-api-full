@@ -1,10 +1,11 @@
-const { JWT_SECRET } = process.env;
+const { JWT_SECRET = 'strong-secret-key' } = process.env;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
+const UnauthorizedError = require('../errors/UnauthorizedError');
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})
@@ -24,6 +25,7 @@ module.exports.getUserById = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new BadRequestError('Передан неправильный _id.'));
+        return;
       }
       next(err);
     });
@@ -39,14 +41,21 @@ module.exports.createUser = (req, res, next) => {
       email, password: hash, name, about, avatar,
     }))
     .then((user) => {
-      res.status(201).send(user);
+      res.status(201).send({
+        name: user.name,
+        about: user.about,
+        avatar: user.avatar,
+        email: user.email,
+      });
     })
     .catch((err) => {
       if (err.code === 11000) {
         next(new ConflictError('Данная почта уже зарегистрирована'));
+        return;
       }
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные при создании пользователя.'));
+        return;
       }
       next(err);
     });
@@ -110,7 +119,12 @@ module.exports.login = (req, res, next) => {
       const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
       res.send({ token });
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'UnauthorizedError') {
+        next(new UnauthorizedError('Неверный логин или пароль'));
+      }
+      next(err);
+    });
 };
 
 module.exports.getUserInfo = (req, res, next) => {

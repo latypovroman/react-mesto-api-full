@@ -3,3 +3,5 @@
 
 
 [Ссылка на сайт](https://mesto.app.nomoredomains.sbs/)
+[Ссылка на api](https://mesto.app.nomoredomains.sbs/)
+Публичный адрес: 84.201.161.49

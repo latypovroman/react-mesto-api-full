@@ -11,8 +11,8 @@ const cardRoutes = require('./routes/cardRoutes');
 const { login, createUser } = require('./controllers/users');
 const { createError } = require('./errors/createError');
 const { validation } = require('./utils/urlValidate');
-const BadRequestError = require('./errors/BadRequestError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const NotFoundError = require('./errors/NotFoundError');
 
 const app = express();
 
@@ -51,7 +51,7 @@ app.use('/users', auth, userRoutes);
 app.use('/cards', auth, cardRoutes);
 
 app.use(auth, () => {
-  throw new BadRequestError('Неверный адрес');
+  throw new NotFoundError('Неверный адрес');
 });
 
 app.use(errorLogger);

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0a65e91c-b347-4341-8c56-0e682229275b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +13,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/backend/controllers/cards.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/backend/controllers/users.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -32,6 +37,11 @@
     <property name="ts.external.directory.path" value="D:\Soft\WebStorm 2021.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\react-mesto-api-full" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -50,7 +60,8 @@
       <workItem from="1654382419832" duration="3292000" />
       <workItem from="1654459295584" duration="4697000" />
       <workItem from="1654516231060" duration="6134000" />
-      <workItem from="1654705719051" duration="7773000" />
+      <workItem from="1654705719051" duration="9344000" />
+      <workItem from="1654760458183" duration="1963000" />
     </task>
     <servers />
   </component>

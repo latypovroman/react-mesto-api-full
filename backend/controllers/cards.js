@@ -18,9 +18,10 @@ module.exports.deleteCard = (req, res, next) => {
       if (req.user._id !== card.owner.toString()) {
         throw new ForbiddenError('Вы можете удалять только созданые вами карточки');
       }
+      return card
     })
     .then((card) => card.remove())
-    .then(() => res.status(200).send('Карточка удалена'))
+    .then(() => res.status(200).send({ message: 'Карточка удалена' }))
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new BadRequestError('Переданы некорректные данные для удаления карточки.'));

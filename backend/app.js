@@ -19,15 +19,8 @@ const app = express();
 app.use(requestLogger);
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:3000/', 'https://mesto.app.nomoredomains.sbs'],
-  // credentials: true,
+  origin: 'https://mesto.app.nomoredomains.sbs'
 }));
-
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
 
 app.post('/signup', celebrate({
   body: Joi.object().keys({
